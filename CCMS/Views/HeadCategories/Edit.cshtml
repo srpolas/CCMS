@@ -1,0 +1,49 @@
+﻿@model CCMS.Models.HeadCategory
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HeadCategory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="HeadCategoryId" class="control-label"></label>
+                <input asp-for="HeadCategoryId" class="form-control" />
+                <span asp-validation-for="HeadCategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadCategoryName" class="control-label"></label>
+                <input asp-for="HeadCategoryName" class="form-control" />
+                <span asp-validation-for="HeadCategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadCategoryDescription" class="control-label"></label>
+                <input asp-for="HeadCategoryDescription" class="form-control" />
+                <span asp-validation-for="HeadCategoryDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHeadCategoryActive" /> @Html.DisplayNameFor(model => model.IsHeadCategoryActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

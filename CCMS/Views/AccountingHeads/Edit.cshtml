@@ -1,0 +1,59 @@
+﻿@model CCMS.Models.AccountingHead
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AccountingHead</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AccountingHeadId" class="control-label"></label>
+                <input asp-for="AccountingHeadId" class="form-control" />
+                <span asp-validation-for="AccountingHeadId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountingHeadName" class="control-label"></label>
+                <input asp-for="AccountingHeadName" class="form-control" />
+                <span asp-validation-for="AccountingHeadName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadType" class="control-label"></label>
+                <input asp-for="HeadType" class="form-control" />
+                <span asp-validation-for="HeadType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadCategory" class="control-label"></label>
+                <input asp-for="HeadCategory" class="form-control" />
+                <span asp-validation-for="HeadCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadDescription" class="control-label"></label>
+                <input asp-for="HeadDescription" class="form-control" />
+                <span asp-validation-for="HeadDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHeadActive" /> @Html.DisplayNameFor(model => model.IsHeadActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
